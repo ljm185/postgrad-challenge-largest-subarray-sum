@@ -5,6 +5,7 @@ const jsdom = require('jsdom');
 const path = require('path');
 
 before(function(done) {
+  this.enableTimeouts(false);
   const babelResult = babel.transformFileSync(path.resolve(__dirname, '..', 'index.js'), {
     presets: ['es2015']
   });
